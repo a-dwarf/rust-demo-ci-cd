@@ -21,7 +21,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        script: whoami
+        script: whoami && echo "# rust-demo-ci-cd" >> /home/ubuntu/iamcoming
     - uses: actions/checkout@v3
     - name: Build
       run: cargo build --verbose
