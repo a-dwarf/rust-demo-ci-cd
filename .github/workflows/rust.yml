@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: executing remote ssh commands using key
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        script: whoami && echo "# rust-demo-ci-cd" >> /home/ubuntu/iamcoming
+    # - name: executing remote ssh commands using key
+    #   uses: appleboy/ssh-action@v1.0.3
+    #   with:
+    #     host: ${{ secrets.HOST }}
+    #     username: ${{ secrets.USERNAME }}
+    #     key: ${{ secrets.KEY }}
+    #     script: whoami && echo "# rust-demo-ci-cd" >> /home/ubuntu/iamcoming
     - uses: actions/checkout@v3
     - name: Build
       run: cargo build --verbose
